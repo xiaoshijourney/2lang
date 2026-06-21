@@ -1,16 +1,24 @@
 # 2l-answer-with-eng-and-chzn
 
-A Claude Code skill that enables bilingual responses in English and Chinese.
+A Claude Code skill that enables bilingual responses in English and Chinese with persona support.
 
-一个让 Claude 用英文和中文双语回复的技能。
+一个让 Claude 用英文和中文双语回复的技能，支持人格选择。
 
-## Description
+## Features / 功能
 
-This skill instructs Claude to respond in both English and Chinese, with English text first followed by the Chinese translation. Perfect for users who want to see responses in both languages simultaneously.
+- Bilingual output in English and Chinese
+  英中双语输出
 
-此技能指示 Claude 用英文和中文双语回复，英文在前，中文翻译在后。非常适合希望同时看到两种语言回复的用户。
+- Dynamic language order based on user's input
+  根据用户输入动态调整语言顺序
 
-## Installation
+- 5 selectable personas with distinct styles
+  5 种可选人格，风格各异
+
+- Persona switching anytime
+  随时切换人格
+
+## Installation / 安装
 
 To install this skill, copy the `SKILL.md` file to your Claude skills directory:
 
@@ -24,7 +32,7 @@ copy SKILL.md %USERPROFILE%\.claude\skills\2l-answer-with-eng-and-chzn\SKILL.md
 cp SKILL.md ~/.claude/skills/2l-answer-with-eng-and-chzn/SKILL.md
 ```
 
-## Usage
+## Usage / 使用
 
 Once installed, activate the skill by typing:
 
@@ -34,19 +42,38 @@ Once installed, activate the skill by typing:
 /2l-answer-with-eng-and-chzn
 ```
 
-Or simply ask Claude to use the bilingual output skill.
+On first load, you'll be asked to choose a persona.
 
-或者直接要求 Claude 使用双语输出技能。
+首次加载时，系统会请你选择人格。
 
-## Rules
+To switch persona later:
+
+切换人格：
+
+```
+switch persona
+切换人格
+```
+
+## Personas / 人格
+
+| Persona | Style / 风格 |
+|---------|-------------|
+| Professional / 专业 | Formal, precise, business-like / 正式、精确、商务风格 |
+| Friendly / 友好 | Casual, warm, approachable / 随意、亲切、平易近人 |
+| Teacher / 导师 | Patient, explanatory, educational / 耐心、解释性强、教育风格 |
+| Tech Expert / 技术专家 | Concise, technical, code-focused / 简洁、技术性强、代码导向 |
+| Creative / 创意 | Imaginative, expressive, playful / 富有想象力、表达丰富、活泼 |
+
+## Rules / 规则
 
 1. Always provide responses in both English and Chinese
 
    始终提供英文和中文双语回复
 
-2. English text comes first, followed by a blank line, then Chinese translation
+2. Language order matches user's input language
 
-   英文在前，空一行，然后是中文翻译
+   语言顺序与用户输入语言一致
 
 3. Each paragraph/sentence should be translated separately
 
@@ -60,11 +87,9 @@ Or simply ask Claude to use the bilingual output skill.
 
    代码块保持原样，无需翻译
 
-## Example
+6. Match the chosen persona's tone and style
 
-This is an example response. It demonstrates the bilingual format.
-
-这是一个示例回复。它展示了双语格式。
+   保持所选人格的语气和风格
 
 ## License
 
