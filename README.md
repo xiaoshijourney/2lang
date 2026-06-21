@@ -24,16 +24,16 @@ A Claude Code skill that enables multilingual responses with persona support.
 
 ## Installation / 安装
 
-To install this skill, copy the `SKILL.md` file to your Claude skills directory:
+To install this skill, copy the `2lang` folder to your Claude skills directory:
 
-安装此技能，将 `SKILL.md` 文件复制到你的 Claude 技能目录：
+安装此技能，将 `2lang` 文件夹复制到你的 Claude 技能目录：
 
 ```bash
 # Windows
-copy SKILL.md %USERPROFILE%\.claude\skills\2lang\SKILL.md
+xcopy 2lang %USERPROFILE%\.claude\skills\2lang\ /E /I
 
 # macOS/Linux
-cp SKILL.md ~/.claude/skills/2lang/SKILL.md
+cp -r 2lang ~/.claude/skills/2lang
 ```
 
 ## Usage / 使用
