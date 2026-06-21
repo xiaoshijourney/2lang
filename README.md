@@ -7,15 +7,19 @@ A Claude Code skill that enables bilingual responses in English and Chinese with
 ## Features / 功能
 
 - Bilingual output in English and Chinese
+
   英中双语输出
 
 - Dynamic language order based on user's input
+
   根据用户输入动态调整语言顺序
 
 - 5 selectable personas with distinct styles
+
   5 种可选人格，风格各异
 
 - Persona switching anytime
+
   随时切换人格
 
 ## Installation / 安装
