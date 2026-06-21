@@ -1,36 +1,76 @@
-# 2lang
+# 2lang 🌐
 
-A Claude Code skill that enables multilingual responses with intelligent language ordering and persona support.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-orange.svg)](https://claude.ai/code)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-green.svg)]()
 
-一个让 Claude 用多语回复的技能，支持智能语序调整和人格选择。
+**A Claude Code skill that enables multilingual responses with intelligent language ordering and persona support.**
 
-## Features / 功能
+**一个让 Claude 用多语回复的技能，支持智能语序调整和人格选择。**
 
-- Choose 1-2 languages for responses
+---
+
+## 📸 Screenshots / 截图
+
+| Language Selection / 语言选择 | Persona Selection / 人格选择 | Output Example / 输出示例 |
+|:---:|:---:|:---:|
+| ![Language Selection](res/1.png) | ![Persona Selection](res/2.png) | ![Output Example](res/3.png) |
+
+---
+
+## 🤔 Why 2lang? / 为什么选择 2lang？
+
+Unlike standard translation tools, 2lang doesn't just translate — it **intelligently adapts**:
+
+与普通翻译工具不同，2lang 不只是翻译——它会**智能适配**：
+
+| Feature / 功能 | Standard Translation / 普通翻译 | 2lang |
+|----------------|--------------------------------|-------|
+| Language ordering / 语序 | Fixed / 固定 | **Adaptive / 自适应** |
+| Technical terms / 技术术语 | Translated / 翻译 | **Original + translation / 原文+翻译** |
+| Cultural context / 文化背景 | Lost / 丢失 | **Preserved / 保留** |
+| Tone & style / 语气风格 | Generic / 通用 | **Persona-matched / 人格匹配** |
+| Code blocks / 代码块 | Translated / 翻译 | **Preserved / 保留** |
+
+---
+
+## ✨ Features / 功能
+
+- 🌐 Choose 1-2 languages for responses
 
   选择 1-2 种回复语言
 
-- **Intelligent language ordering** — adapts based on content type and user input
+- 🧠 **Intelligent language ordering** — adapts based on content type and user input
 
   **智能语序调整** — 根据内容类型和用户输入自适应
 
-- **Content-aware translation** — technical terms, cultural references, code comments handled differently
+- 🎯 **Content-aware translation** — technical terms, cultural references, code comments handled differently
 
   **内容感知翻译** — 技术术语、文化引用、代码注释分别处理
 
-- 8 selectable personas + custom cosplay mode
+- 📝 **Paragraph-level translation** — multi-segment responses translated correctly
+
+  **段落级翻译** — 多段落回复正确翻译
+
+- 🔀 **Mixed language mode** — primary language with technical terms in another
+
+  **混合语言模式** — 主语言 + 技术术语用另一种语言
+
+- 🎭 8 selectable personas + custom cosplay mode
 
   8 种可选人格 + 自定义角色扮演模式
 
-- Quick start: `/2lang en zh teacher` one-shot setup
+- ⚡ Quick start: `/2lang en zh teacher` one-shot setup
 
   快速启动：一条命令完成所有设置
 
-- Persona and language switching anytime
+- 🔄 Persona and language switching anytime
 
   随时切换人格和语言
 
-## Installation / 安装
+---
+
+## 📦 Installation / 安装
 
 To install this skill, copy the `2lang` folder to your Claude skills directory:
 
@@ -44,19 +84,11 @@ xcopy 2lang %USERPROFILE%\.claude\skills\2lang\ /E /I
 cp -r 2lang ~/.claude/skills/2lang
 ```
 
-## Usage / 使用
+---
 
-Once installed, activate the skill by typing:
+## 🚀 Quick Start / 快速开始
 
-安装后，输入以下命令激活技能：
-
-```
-/2lang
-```
-
-Or set up everything in one command:
-
-或用一条命令完成设置：
+### One-command setup / 一条命令设置
 
 ```
 /2lang en zh teacher        → English + Chinese, Teacher persona
@@ -64,40 +96,42 @@ Or set up everything in one command:
 /2lang zh en                 → Chinese + English, Default persona
 ```
 
-To switch languages / 切换语言:
+### Interactive setup / 交互式设置
 
-```
-switch languages
-切换语言
-```
+Just type `/2lang` and follow the prompts!
 
-To switch persona / 切换人格:
+输入 `/2lang` 然后按提示操作！
 
-```
-switch persona
-切换人格
-```
+---
 
-To reset everything / 重置所有设置:
+## 📖 Commands Reference / 命令参考
 
-```
-reset
-重置
-```
+| Command / 命令 | Description / 说明 |
+|----------------|-------------------|
+| `/2lang` | Start interactive setup / 开始交互式设置 |
+| `/2lang [lang1] [lang2?] [persona?]` | One-shot setup / 一条命令设置 |
+| `switch languages` / `切换语言` | Change languages / 切换语言 |
+| `switch persona` / `切换人格` | Change persona / 切换人格 |
+| `show status` / `隐藏状态` | Toggle status display / 切换状态显示 |
+| `reset` / `重置` | Reset all settings / 重置所有设置 |
 
-## Languages / 语言
+---
+
+## 🌍 Languages / 语言
 
 | Language / 语言 | Code |
 |----------------|------|
-| English | en |
-| 中文 | zh |
-| 日本語 | ja |
-| 한국어 | ko |
-| Français | fr |
-| Deutsch | de |
-| Español | es |
+| English | `en` |
+| 中文 | `zh` |
+| 日本語 | `ja` |
+| 한국어 | `ko` |
+| Français | `fr` |
+| Deutsch | `de` |
+| Español | `es` |
 
-## Personas / 人格
+---
+
+## 🎭 Personas / 人格
 
 | Persona | Style / 风格 |
 |---------|-------------|
@@ -114,24 +148,72 @@ reset
 
 描述任意角色，AI 将扮演该角色。
 
-## Intelligent Language Ordering / 智能语序调整
+---
+
+## 🧠 Intelligent Language Ordering / 智能语序调整
 
 When two languages are selected, the order adapts automatically:
 
 选择两种语言时，顺序自动调整：
 
-- **Technical content** → lead with the more precise language
-- **Emotional content** → lead with user's native language
-- **Mixed input** → detect dominant language
-- **Short replies** → single language only
-- **Explicit override** → user can force order anytime
+| Content Type / 内容类型 | Primary Language / 主要语言 |
+|------------------------|---------------------------|
+| Technical content / 技术内容 | More precise language / 更精准的语言 |
+| Emotional content / 情感内容 | User's native language / 用户母语 |
+| Mixed input / 混合输入 | Dominant language / 主导语言 |
+| Short replies / 短回复 | Single language only / 仅用一种语言 |
 
-- 技术内容 → 用更精准的语言领先
-- 情感内容 → 用用户母语领先
-- 混合输入 → 检测主导语言
-- 短回复 → 仅用一种语言
-- 显式覆盖 → 用户可随时强制顺序
+**Explicit override / 显式覆盖**: User can force order anytime with "respond in English first" / "先用中文回复"
 
-## License
+---
 
-MIT
+## 📁 Project Structure / 项目结构
+
+```
+2lang/
+├── 2lang/
+│   └── SKILL.md          # Main skill file / 主技能文件
+├── res/
+│   ├── 1.png             # Screenshot: language selection / 截图：语言选择
+│   ├── 2.png             # Screenshot: persona selection / 截图：人格选择
+│   └── 3.png             # Screenshot: output example / 截图：输出示例
+├── .gitignore            # Git ignore rules / Git 忽略规则
+├── CHANGELOG.md          # Version history / 版本历史
+├── CONTRIBUTING.md       # Contribution guidelines / 贡献指南
+├── LICENSE               # MIT License / MIT 许可证
+└── README.md             # This file / 本文件
+```
+
+---
+
+## 🤝 Contributing / 贡献
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解指南。
+
+---
+
+## 📝 Changelog / 更新日志
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
+查看 [CHANGELOG.md](CHANGELOG.md) 了解版本历史。
+
+---
+
+## 📄 License / 许可证
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+本项目采用 MIT 许可证 - 详情请查看 [LICENSE](LICENSE) 文件。
+
+---
+
+## 🙏 Acknowledgments / 致谢
+
+- Built with ❤️ for the Claude Code community
+- Inspired by the need for natural multilingual communication
+
+- 为 Claude Code 社区用心构建 ❤️
+- 受启发于自然多语交流的需求
