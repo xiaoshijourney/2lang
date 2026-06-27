@@ -57,6 +57,10 @@ Unlike standard translation tools, 2lang doesn't just translate — it **intelli
 
   **段落级翻译** — 多段落回复正确翻译
 
+- 🪞 **User input echo translation** — first line of response is a direct translation of your message into the other language, so you always see your input in both languages
+
+  **用户输入回声翻译** — 回复第一行是你的消息的直接翻译，让你随时看到两种语言的输入
+
 - 🔀 **Mixed language mode** — primary language with technical terms in another
 
   **混合语言模式** — 主语言 + 技术术语用另一种语言

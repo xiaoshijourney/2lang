@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] / [未发布]
 
 ### Added / 新增
+- **User input echo translation** — first line of response translates user's input into the other language
+- **用户输入回声翻译** — 回复第一行将用户输入翻译成另一种语言
 - **English Practice Mode** with 3 difficulty levels (beginner/intermediate/advanced)
 - **英语练习模式**，3 个难度等级（初级/中级/高级）
 - **Ladder Mode** for gradual bilingual-to-English transition over 4 weeks
@@ -57,6 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 明确状态显示规则（何时显示/隐藏/切换）
 
 ### Fixed / 修复
+- Fixed colon + newline content being skipped in translation
+- 修复冒号换行后内容漏掉翻译的问题
 - Synced project SKILL.md with installed version
 - 同步项目 SKILL.md 与已安装版本
 - Fixed multi-segment response translation issue

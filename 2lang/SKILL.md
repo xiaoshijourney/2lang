@@ -41,8 +41,7 @@ On first load, ask the user to choose 1-2 languages for responses. Display a num
 8. **Español**
 9. **Português**
 10. **Italiano**
-11. **العربية**
-12. **Русский**
+11. **Русский**
 
 **Language codes / 语言代码**:
 | Language / 语言 | Code |
@@ -57,7 +56,6 @@ On first load, ask the user to choose 1-2 languages for responses. Display a num
 | Español | `es` |
 | Português | `pt` |
 | Italiano | `it` |
-| العربية | `ar` |
 | Русский | `ru` |
 
 To switch languages later, say: "switch languages" or "切换语言"
@@ -139,7 +137,7 @@ AI: ⚠️ Language code "xx" not recognized.
     ⚠️ 语言代码 "xx" 无法识别。
 
     Available codes / 可用代码:
-    en, zh, zh-CN, zh-TW, ja, ko, fr, de, es, pt, it, ar, ru
+    en, zh, zh-CN, zh-TW, ja, ko, fr, de, es, pt, it, ru
 
     Please try again / 请重试:
     /2lang en zh
@@ -362,12 +360,12 @@ When two languages are selected, the order is NOT fixed — it adapts to context
 2. **Content-aware ordering**:
    - **Technical/code content**: Lead with the language more precise for the topic (e.g., lead with English for programming concepts, lead with 中文 for Chinese cultural topics).
    - **Conversational/emotional content**: Lead with the user's stronger/native language.
-   - **Mixed-language input**: Detect the dominant language; if the user writes 70% Chinese + 30% English terms, lead with Chinese.
+   - **Mixed-language input**: When the user mixes two languages in a single message (e.g., "can you 介绍 this 项目"), it means they are thinking in both languages — perhaps substituting words they don't know. **Always respond in BOTH languages** for mixed-language input, regardless of response length. This overrides the short-response rule (rule 4). A message counts as "mixed" when it contains **multiple words from each language** (not just one loanword or proper noun). Detect the dominant language to determine which one leads.
 
    内容感知排序：
    - 技术/代码内容：用更精准的语言领先（如编程概念用英语领先，中国文化话题用中文领先）
    - 对话/情感内容：用用户的母语或更擅长的语言领先
-   - 混合语言输入：检测主导语言；如果用户写70%中文+30%英文术语，则中文领先
+   - **混合语言输入**：当用户在一条消息中混合使用两种语言时（如 "can you 介绍 this 项目"），说明用户正在用两种语言思考——可能不会某些词而用另一种语言代替。**混合语言输入时始终用两种语言回复**，无论回复长短，此规则覆盖短回复规则（规则4）。判断标准：消息中**每种语言都有多个词**（不是只有一个借词或专有名词）。检测主导语言来决定哪种语言领先。
 
 3. **Explicit override**: User can force the order at any time:
    - "respond in English first" / "先用中文回复" / "日本語で先に"
@@ -394,11 +392,22 @@ Python 的 GIL（全局解释器锁）阻止了真正的多线程。
 This movie was really touching — I cried at the end.
 ```
 
-**User writes mixed language:**
+**User writes mixed language (bilingual thinking):**
 ```
 我最近在学 Kubernetes，感觉 Pod 的概念有点难理解。
 
 I've been learning Kubernetes recently — the concept of Pods feels a bit hard to grasp.
+```
+
+**User writes mixed language (substituting unknown words):**
+```
+User: "can you 介绍 this 项目？"
+
+Can you introduce this project?
+
+当然可以！这个项目是……
+
+Sure! This project is...
 ```
 
 ## Content-Aware Translation Rules / 内容感知翻译规则
@@ -530,6 +539,50 @@ When two languages are selected, **EVERY part of the response must be translated
 - ✅ Every blockquote / 每个引用块
 - ❌ Code blocks (keep as-is) / 代码块（保持原样）
 - ❌ URLs and paths / URL和路径
+- ✅ **Everything else** — translate ALL prose content that is not a code block or URL. Do not invent artificial boundaries (after colons, dashes, etc.). / **其他所有内容**——翻译所有非代码块、非 URL 的文本。不要人为创造翻译边界（冒号后、破折号后等）。
+
+### User Input Echo Translation / 用户输入回声翻译
+
+When two languages are selected, **the first line of the response content (after status display, if shown) must be a direct translation of the user's input** into the other language.
+
+当选择两种语言时，**回复内容的第一行（状态显示之后）必须是用户输入的直接翻译**，翻译成另一种语言。
+
+**Rules / 规则**:
+- Translate the user's entire message as a single line, naturally and fluently
+  将用户整条消息作为一行翻译，自然流畅
+- Do NOT add meta-commentary like "The user is asking...", "用户问的是..." — just translate directly
+  不要添加"用户问的是……""The user is asking..."等元描述——直接翻译
+- This line comes AFTER status display (if shown) and BEFORE the actual response content
+  这一行在状态显示（如有）之后、实际回复内容之前
+- Skip this for very short inputs (1-2 words) or code-only inputs (see rule 4)
+  对于极短输入（1-2个词）或纯代码输入，跳过此步骤（见规则4）
+- **Mixed-language input**: The echo translation should "fill in" the words the user didn't know, producing a clean sentence in the other language
+  **混合语言输入**：回声翻译应"补全"用户不会的词，生成另一语言的完整句子
+
+**Example / 示例**:
+
+User input / 用户输入: `帮我做个任务清单`
+
+```
+Help me create a task list.
+
+好的，这是一个任务清单：
+
+Here's a task list:
+
+- 任务1 / Task 1
+- 任务2 / Task 2
+```
+
+User input / 用户输入: `explain how Docker networking works`
+
+```
+解释一下 Docker 网络是如何工作的。
+
+Docker networking allows containers to communicate with each other...
+
+Docker 网络允许容器之间互相通信……
+```
 
 ### Paragraph-Level Translation / 段落级翻译
 
@@ -889,7 +942,7 @@ MULTILINGUAL OUTPUT MODE
 When responding, use the user's selected languages (1-2 languages) with intelligent ordering:
 
 1. Language Selection: On first interaction, ask user to choose from:
-   English, 中文(简体), 中文(繁體), 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, العربية, Русский
+   English, 中文(简体), 中文(繁體), 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, Русский
 
 2. Persona Selection: Ask user to choose a persona:
    Default, Professional, Friendly, Teacher, Tech Expert, Creative, Storyteller, Socratic, Slacker, Grumpy Coder, Anime
