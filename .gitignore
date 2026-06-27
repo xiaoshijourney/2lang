@@ -45,3 +45,6 @@ build/
 # Build outputs / 构建输出
 out/
 output/
+
+# Claude Code local guidance
+CLAUDE.md

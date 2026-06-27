@@ -4,9 +4,9 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-orange.svg)](https://claude.ai/code)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-green.svg)]()
 
-**A Claude Code skill that enables multilingual responses with intelligent language ordering and persona support.**
+**A Claude Code skill for practicing English while coding — with intelligent bilingual output, personas, and progressive learning modes.**
 
-**一个让 Claude 用多语回复的技能，支持智能语序调整和人格选择。**
+**一个让你在写代码时练英语的 Claude Code 技能——智能双语输出、人格扮演、渐进式学习。**
 
 ---
 
@@ -20,6 +20,10 @@
 
 ## 🤔 Why 2lang? / 为什么选择 2lang？
 
+**Practice English naturally while coding** — no flashcards, no grammar drills, just real work in English with a Chinese safety net.
+
+**在写代码的过程中自然练英语** —— 不用背单词，不用学语法，就是在实际工作中用英语，中文兜底。
+
 Unlike standard translation tools, 2lang doesn't just translate — it **intelligently adapts**:
 
 与普通翻译工具不同，2lang 不只是翻译——它会**智能适配**：
@@ -31,6 +35,7 @@ Unlike standard translation tools, 2lang doesn't just translate — it **intelli
 | Cultural context / 文化背景 | Lost / 丢失 | **Preserved / 保留** |
 | Tone & style / 语气风格 | Generic / 通用 | **Persona-matched / 人格匹配** |
 | Code blocks / 代码块 | Translated / 翻译 | **Preserved / 保留** |
+| English learning / 英语学习 | Not supported / 不支持 | **Practice + Ladder modes / 练习+阶梯模式** |
 
 ---
 
@@ -56,9 +61,17 @@ Unlike standard translation tools, 2lang doesn't just translate — it **intelli
 
   **混合语言模式** — 主语言 + 技术术语用另一种语言
 
-- 🎭 8 selectable personas + custom cosplay mode
+- 📖 **English Practice Mode** — 3 difficulty levels, learn English while coding
 
-  8 种可选人格 + 自定义角色扮演模式
+  **英语练习模式** — 3 个难度等级，写代码的同时学英语
+
+- 🪜 **Ladder Mode** — gradual transition from bilingual to English-only over 4 weeks
+
+  **阶梯模式** — 4 周内从双语逐步过渡到纯英文
+
+- 🎭 11 selectable personas + custom cosplay mode
+
+  11 种可选人格 + 自定义角色扮演模式
 
 - ⚡ Quick start: `/2lang en zh teacher` one-shot setup
 
@@ -112,7 +125,11 @@ Just type `/2lang` and follow the prompts!
 | `/2lang [lang1] [lang2?] [persona?]` | One-shot setup / 一条命令设置 |
 | `switch languages` / `切换语言` | Change languages / 切换语言 |
 | `switch persona` / `切换人格` | Change persona / 切换人格 |
-| `show status` / `隐藏状态` | Toggle status display / 切换状态显示 |
+| `practice mode on` / `开启练习模式` | Enable English practice mode / 启用英语练习模式 |
+| `practice level beginner/intermediate/advanced` | Set practice difficulty / 设置练习难度 |
+| `ladder mode on` / `开启阶梯模式` | Enable gradual transition / 启用渐进过渡 |
+| `ladder week N` / `阶梯第N周` | Set current ladder week / 设置当前阶梯周 |
+| `show status` / `显示状态` | Toggle status display / 切换状态显示 |
 | `reset` / `重置` | Reset all settings / 重置所有设置 |
 
 ---
@@ -122,12 +139,17 @@ Just type `/2lang` and follow the prompts!
 | Language / 语言 | Code |
 |----------------|------|
 | English | `en` |
-| 中文 | `zh` |
+| 中文（简体） | `zh` / `zh-CN` |
+| 中文（繁體） | `zh-TW` |
 | 日本語 | `ja` |
 | 한국어 | `ko` |
 | Français | `fr` |
 | Deutsch | `de` |
 | Español | `es` |
+| Português | `pt` |
+| Italiano | `it` |
+| العربية | `ar` |
+| Русский | `ru` |
 
 ---
 
@@ -143,6 +165,9 @@ Just type `/2lang` and follow the prompts!
 | Creative / 创意 | Imaginative, expressive, playful / 富有想象力、活泼 |
 | Storyteller / 叙事者 | Narrative, vivid, metaphorical / 叙事性强、生动 |
 | Socratic / 苏格拉底式 | Guides through questions / 通过提问引导 |
+| 摸鱼大师 / Slacker | Lazy, meme-heavy, procrastination vibes 🐟 / 摸鱼风格，段子多 |
+| 暴躁老哥 / Grumpy Coder | Sarcastic, roasts your code 😤 / 毒舌吐槽，暴躁但有道理 |
+| 二次元 / Anime | Kawaii, kaomoji, light novel style ✨ / 可爱风，颜文字，轻小说口吻 |
 
 **Custom persona / 自定义人格**: Describe any character (e.g., "Tony Stark", "鲁迅") and the AI will cosplay as them.
 

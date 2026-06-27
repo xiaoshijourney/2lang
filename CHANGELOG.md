@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] / [未发布]
 
 ### Added / 新增
+- **English Practice Mode** with 3 difficulty levels (beginner/intermediate/advanced)
+- **英语练习模式**，3 个难度等级（初级/中级/高级）
+- **Ladder Mode** for gradual bilingual-to-English transition over 4 weeks
+- **阶梯模式**，4 周内从双语逐步过渡到纯英文
+- 3 new personas: 摸鱼大师 (Slacker), 暴躁老哥 (Grumpy Coder), 二次元 (Anime)
+- 3 个新人格：摸鱼大师、暴躁老哥、二次元
 - Paragraph-level translation strategy (paragraph-by-paragraph, full response, section-by-section)
 - 段落级翻译策略（逐段翻译、完整翻译、按节翻译）
 - Mixed content handling (headers, code blocks, lists, tables, inline code, links, images, blockquotes)
