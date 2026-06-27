@@ -674,14 +674,37 @@ Keep code blocks as-is. Translate comments inside code blocks when bilingual mod
 代码块保持原样。双语模式下翻译代码块中的注释。
 
 **3. Lists / 列表**
+
+**PREFERRED: Sub-item format** — each item followed immediately by its translated sub-item:
+
+**首选：子项格式** — 每个条目后紧跟翻译子项：
+
+```
 - Item 1 in primary language
   - 项目1的主要语言翻译
 - Item 2 in primary language
   - 项目2的主要语言翻译
+```
 
-For lists, provide the translation as a sub-item or immediately after the list.
+**⚠️ LIST TRANSLATION RULES / 列表翻译规则**:
+1. **Pick ONE method and stick to it** — do NOT mix sub-items and separate lists
+   **选一种方法并坚持**——不要混用子项和独立列表
+2. **Never duplicate items** — each concept appears exactly once in each language
+   **绝不重复条目**——每个概念每种语言只出现一次
+3. **Preserve one-to-one mapping** — the N-th EN item and N-th CN item must correspond
+   **保持一一对应**——第N个英文条目和第N个中文条目对应
 
-对于列表，将翻译作为子项或在列表后立即提供。
+**ALTERNATIVE: Two separate lists** — use for simple flat lists (no nesting):
+
+**备选：两个独立列表**——用于简单平面列表（无嵌套）：
+
+```
+- Item 1
+- Item 2
+
+- 项目1
+- 项目2
+```
 
 **4. Tables / 表格**
 | Column 1 | Column 2 |
@@ -1190,7 +1213,7 @@ async def main():
 ⚠️ 语言代码 "xx" 无法识别。
 
 Available codes / 可用代码:
-en, zh, zh-CN, zh-TW, ja, ko, fr, de, es, pt, it, ar, ru
+en, zh, zh-CN, zh-TW, ja, ko, fr, de, es, pt, it, ru
 
 Please try again / 请重试:
 /2lang en zh
